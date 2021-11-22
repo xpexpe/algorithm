@@ -52,7 +52,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         init();
-        for(int i=3; i>0; i--) {
+        for(int i=1; i<4; i++) {
             st = new StringTokenizer(br.readLine());
             for(int j=1; j<4; j++) {
                 col[i][j] = Integer.parseInt(st.nextToken());
@@ -63,6 +63,7 @@ public class Main {
         for(int i=0; i<N; i++) {
             st = new StringTokenizer(br.readLine());
             reverse(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+            if(end>0)   break;
         }
 
         System.out.println(end);
