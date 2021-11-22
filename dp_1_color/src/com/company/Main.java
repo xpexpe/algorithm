@@ -18,11 +18,13 @@ r=1 | 1 0 0
 public class Main {
     static int col[][] = new int[5][5];
     static int check = 1;
-    static int end = 0;
-    static void init() {
-        for(var i : col)
-            for(var j : i)
-                j=0;
+    static int end = -1;
+    static void init(){
+        for(int i=0; i<5; i++) {
+            for(int j=0; j<5; j++) {
+                col[i][j] = 0;
+            }
+        }
     }
 
     static void change(int r, int c) {
@@ -50,7 +52,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         init();
-        for(int i=1; i<4; i++) {
+        for(int i=3; i>0; i--) {
             st = new StringTokenizer(br.readLine());
             for(int j=1; j<4; j++) {
                 col[i][j] = Integer.parseInt(st.nextToken());
@@ -63,8 +65,7 @@ public class Main {
             reverse(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
         }
 
-        if(end != 0) System.out.println(end);
-        else System.out.println("-1");
+        System.out.println(end);
     }
 }
 
