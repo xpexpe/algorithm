@@ -31,9 +31,10 @@ public class Main {
 
         for(int i=1; i<=N; i++) {
             Iterator<Integer> it = graph.get(i).iterator();
-            while(it.hasNext())
+            while(it.hasNext()) {
                 int num = it.next();
-                System.out.print(in + " ");
+                System.out.print(num + " ");
+            }
             System.out.println();
         }
     }
