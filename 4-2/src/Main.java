@@ -38,14 +38,18 @@ public class Main {
             String str = queue.remove();
             int qy = Character.getNumericValue(str.charAt(0));
             int qx = Character.getNumericValue(str.charAt(2));
-            visited[qy][qx] = true;
-            size++;
+
+
             Iterator<String> it = graph[qy][qx].iterator();
             while(it.hasNext()) {
                 String s = it.next();
                 int sy = Character.getNumericValue(s.charAt(0));
                 int sx = Character.getNumericValue(s.charAt(2));
-                if(visited[sy][sx] == false)    queue.add(sy + "," + sx);
+                if(visited[sy][sx] == false)    {
+                    queue.add(sy + "," + sx);
+                    visited[sy][sx] = true;
+                    size++;
+                }
             }
         }
         return size;
