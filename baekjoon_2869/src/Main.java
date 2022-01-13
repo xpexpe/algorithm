@@ -17,12 +17,12 @@ public class Main {
         int min = V-A;
 
         int count = min / (A-B);
-        double gar = min / (A-B);
+        double gar = (double)min / (A-B);
 
         if(gar - count > 0) {
             count += 1;
         }
 
-        System.out.println(count);
+        System.out.println(++count);
     }
 }
