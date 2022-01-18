@@ -8,14 +8,14 @@ public class Main {
 
     public static void showroom(int H, int W, int N) {
         int h = N % H;
-        int w = 1;
+        int w = 0;
 
         if(h == 0)  h = H;
         else {
             w++;
         }
 
-        w += W / H;
+        w += N / H;
 
 
         System.out.println(100 * h + w);
